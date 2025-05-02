@@ -8,8 +8,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "prebuild": "vitest run",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest run"
   },
   "devDependencies": {
     "terser": "^5.36.0",
