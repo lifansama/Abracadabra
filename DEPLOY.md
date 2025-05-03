@@ -141,6 +141,39 @@ let Result = Abra.Output() //获取输出
 
 调用 `Output()` 将获得此前输入的处理结果，其返回类型可能是 `String` 或 `Uint8Array`，取决于对象实例化时指定了何种输出模式。
 
+### 自行编译
+
+如果你想要自行编译JavaScript库文件，请克隆 main 分支到本地。  
+安装 `npm` 并配置恰当的环境。
+
+安装编译和调试依赖：
+
+```shell
+npm install
+```
+
+然后执行编译指令：
+
+```shell
+npm run build
+```
+
+如果你对密码映射表做出了修改，那么请确保将JSON压缩成一行，转义成字符串。  
+然后修改 `utils.js`(传统加密) 或者 `utils_next.js`(文言加密)：
+
+```javascript
+
+const Map = '....' // 字符串内填密码映射表
+
+```
+
+在执行编译时，会自动对文言文密本中的句式语法执行检查，如果有问题，则会报错并提示编译失败。  
+如果你想要单独运行检查，可以执行：
+
+```shell
+npm run test
+```
+
 ## WebAssembly
 
 前往 Release 下载编译好的 WebAssembly 文件。
