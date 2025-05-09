@@ -167,7 +167,9 @@ Abracadabra 还在积极开发中，这里是一些注意事项。
 
 ## 细节概要
 
-请查阅 [**细节和使用指南**](https://github.com/SheepChef/Abracadabra/blob/main/USAGE.md) 了解更多
+请查阅 [**细节和使用指南**](https://github.com/SheepChef/Abracadabra/blob/main/USAGE.md) 了解更多。
+
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/SheepChef/Abracadabra)
 
 ### 加解密过程
 
@@ -321,8 +323,6 @@ AES 加密密钥和转轮密钥是同一个，均采用哈希值。
 感谢 [**Unishox2**](https://github.com/siara-cc/Unishox2) 提供高效的短文本压缩方案。
 
 感谢贡献 PR 和参与测试的所有人。
-
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/SheepChef/Abracadabra)
 
 ## Star History
 
