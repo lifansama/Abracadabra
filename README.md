@@ -322,6 +322,8 @@ AES 加密密钥和转轮密钥是同一个，均采用哈希值。
 
 感谢贡献 PR 和参与测试的所有人。
 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/SheepChef/Abracadabra)
+
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=SheepChef/Abracadabra&type=Date)](https://star-history.com/#SheepChef/Abracadabra&Date)
