@@ -126,8 +126,24 @@ function Check(Map2) {
             ) {
               ErrorOccur = true;
               console.warn(
-                "Incorrect Begin Sentence:" + Map_Obj["Sentences"]["Begin"][c]
+                "Incorrect Begin Sentence:" +
+                  Map_Obj["Sentences"]["Begin"][c] +
+                  " || " +
+                  Sentence[d]
               );
+            } else if (Sentence[d].length > 1) {
+              let temp = Array.from(Sentence[d]);
+              temp.forEach((item) => {
+                if (PayloadLetter.indexOf(item) != -1) {
+                  ErrorOccur = true;
+                  console.warn(
+                    "Incorrect Begin Sentence:" +
+                      Map_Obj["Sentences"]["Begin"][c] +
+                      " || " +
+                      Sentence[d]
+                  );
+                }
+              });
             }
           }
         }
@@ -153,7 +169,7 @@ function Check(Map2) {
         ) {
           ErrorOccur = true;
           console.warn(
-            "Incorrect Main Sentence:" + Map_Obj["Sentences"]["Begin"][c]
+            "Incorrect Main Sentence:" + Map_Obj["Sentences"]["Main"][c]
           );
         }
         for (let d = 1; d < Sentence.length; d++) {
@@ -172,8 +188,24 @@ function Check(Map2) {
             ) {
               ErrorOccur = true;
               console.warn(
-                "Incorrect Main Sentence:" + Map_Obj["Sentences"]["Main"][c]
+                "Incorrect Main Sentence:" +
+                  Map_Obj["Sentences"]["Main"][c] +
+                  " || " +
+                  Sentence[d]
               );
+            } else if (Sentence[d].length > 1) {
+              let temp = Array.from(Sentence[d]);
+              temp.forEach((item) => {
+                if (PayloadLetter.indexOf(item) != -1) {
+                  ErrorOccur = true;
+                  console.warn(
+                    "Incorrect Main Sentence:" +
+                      Map_Obj["Sentences"]["Main"][c] +
+                      " || " +
+                      Sentence[d]
+                  );
+                }
+              });
             }
           }
         }
@@ -200,7 +232,7 @@ function Check(Map2) {
         ) {
           ErrorOccur = true;
           console.warn(
-            "Incorrect End Sentence:" + Map_Obj["Sentences"]["Begin"][c]
+            "Incorrect End Sentence:" + Map_Obj["Sentences"]["End"][c]
           );
         }
         for (let d = 1; d < Sentence.length; d++) {
@@ -219,8 +251,24 @@ function Check(Map2) {
             ) {
               ErrorOccur = true;
               console.warn(
-                "Incorrect End Sentence:" + Map_Obj["Sentences"]["End"][c]
+                "Incorrect End Sentence:" +
+                  Map_Obj["Sentences"]["End"][c] +
+                  " || " +
+                  Sentence[d]
               );
+            } else if (Sentence[d].length > 1) {
+              let temp = Array.from(Sentence[d]);
+              temp.forEach((item) => {
+                if (PayloadLetter.indexOf(item) != -1) {
+                  ErrorOccur = true;
+                  console.warn(
+                    "Incorrect End Sentence:" +
+                      Map_Obj["Sentences"]["End"][c] +
+                      " || " +
+                      Sentence[d]
+                  );
+                }
+              });
             }
           }
         }
