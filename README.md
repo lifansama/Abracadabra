@@ -125,6 +125,18 @@ echo '{"method":"NEXT","mode":"ENCRYPT","inputType":"TEXT","outputType":"TEXT","
 
 > **提示：Edge 插件商店的上架审核速度十分缓慢，因此更新速度也更慢。不推荐从Edge商店下载本插件。**
 
+### Android 客户端
+
+本项目的 Android 客户端完全在 WebView 中静态运行。  
+
+![image](https://github.com/user-attachments/assets/0f3b1c92-8853-4c70-8ef2-58630769beda)
+
+APK使用HBuilderX自动打包，**完全离线运行，没有自动更新等配套功能**。
+
+功能和界面均和前端静态网页没有差异。  
+
+APK文件可以 [**在 Release 中下载**](https://github.com/SheepChef/Abracadabra/releases/latest)
+
 ### 油猴脚本
 
 油猴脚本基于本项目的 JavaScript 实现，已上传到 **Greasy Fork** 网站。
