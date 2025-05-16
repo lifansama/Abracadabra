@@ -1,4 +1,4 @@
-// vite.config.js
+/// <reference types="vitest/config" />
 import { defineConfig } from "vite";
 import fs from "fs";
 import path from "path";
@@ -8,6 +8,16 @@ let configStore;
 
 export default defineConfig({
   // 配置选项
+  test: {
+    coverage: {
+      exclude: [
+        "vite.config.js",
+        "dist",
+        "JavyInputAppendix.js",
+        "src/javascript/unishox2.js",
+      ],
+    },
+  },
   build: {
     outDir: "dist", // 将打包后的文件输出到 dist 目录
     minify: "eslint", // 使用 terser 进行压缩
