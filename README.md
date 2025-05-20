@@ -326,6 +326,16 @@ AES 加密密钥和转轮密钥是同一个，均采用哈希值。
 
 感谢贡献 PR 和参与测试的所有人。
 
+# 开放源代码许可
+
+- [**Unishox2**](https://github.com/siara-cc/Unishox2) 短字符串压缩实现 _©Siara-cc_, **Apache-2.0** License.
+- [**crypto-js**](https://github.com/brix/crypto-js) AES加密实现 _©Jeff Mott/Evan Vosberg_, **MIT** License.
+- [**pako**](https://github.com/nodeca/pako) GZIP压缩实现 _©Vitaly Puzrin/Andrei Tuputcyn_, **MIT** License.
+- [**js-base64**](https://github.com/dankogai/js-base64) Base64编码工具实现 _©Dan Kogai_, **BSD-3-Clause** License.
+- [**mersenne-twister**](https://github.com/boo1ean/mersenne-twister) 梅森旋转算法实现 _©Makoto Matsumoto/Takuji Nishimura_, **BSD-3-Clause** License.
+
+本项目许可证与所有依赖项的许可证兼容。
+
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=SheepChef/Abracadabra&type=Date)](https://star-history.com/#SheepChef/Abracadabra&Date)
