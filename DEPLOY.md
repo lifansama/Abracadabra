@@ -19,7 +19,8 @@ npm install abracadabra-cn
 import { Abracadabra } from "abracadabra-cn";
 ```
 
-如果你想在网页中全量引入本库，可以导入 `abracadabra-cn.umd.cjs`
+如果你想在网页中全量引入本库，可以导入 `abracadabra-cn.umd.cjs`  
+在网页上直接引用，请看 [**网页引用**](#网页引用) 一节。
 
 ### NPM 部署说明
 
@@ -140,6 +141,33 @@ let Result = Abra.Output() //获取输出
 在调用 `Output()` 之前，你需要至少调用过一次 `Input()`，否则将会抛出错误。
 
 调用 `Output()` 将获得此前输入的处理结果，其返回类型可能是 `String` 或 `Uint8Array`，取决于对象实例化时指定了何种输出模式。
+
+### 网页引用
+
+绕过NPM和包管理，你也可以直接在任意网页上直接引用本项目。
+
+在Release处下载 `.umd.cjs` 文件，放到自定义位置，然后在网页 `<head>` 标签添加引用：
+
+```HTML
+
+<script src="<path>/abracadabra-cn.umd.cjs"></script>
+
+```
+
+在网页的其他地方调用脚本接口，可以这么写：
+
+```HTML
+<script>
+
+let Abra = new window["abracadabra-cn"].Abracadabra(InputMode,OutputMode);
+
+//此后的调用方法，和前述调用方法没有差别，直接使用此实例化对象即可。
+//故不做过多赘述。
+
+</script>
+```
+
+在实例化对象之后，其余的调用方法请见上一节。
 
 ### 自行编译
 
