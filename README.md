@@ -43,7 +43,8 @@
 <br>
 <br>
 **⚠️本项目受私有许可证保护**，使用本项目则默认视为同意并遵守相关条款。  
-👉 查阅 [**AIPL-1.1 许可**](LICENSE.md) 来了解详细信息，如果不想读完冗长文档，也可以前往 [**#87**](https://github.com/SheepChef/Abracadabra/issues/87) 查阅简单介绍，
+👉 查阅 [**AIPL-1.1 许可**](LICENSE.md) 来了解详细信息，也可以前往 [**#87**](https://github.com/SheepChef/Abracadabra/issues/87) 查阅简单介绍，  
+👉 有关本项目的依赖项，请见 [**开放源代码许可**](#开放源代码许可) 一节。
 ## 特性
 
 - **仿真，使用文言语法句式**。
@@ -241,7 +242,7 @@ AES 加密密钥和转轮密钥是同一个，均采用哈希值。
 <td align=center>✅</td>
 </tr>
 <tr>
-<td>加密</td>
+<td>安全</td>
 <td align=center>✅</td>
 <td align=center>❌</td>
 <td align=center>✅</td>
@@ -326,7 +327,7 @@ AES 加密密钥和转轮密钥是同一个，均采用哈希值。
 
 感谢贡献 PR 和参与测试的所有人。
 
-# 开放源代码许可
+## 开放源代码许可
 
 - [**Unishox2**](https://github.com/siara-cc/Unishox2) 短字符串压缩实现 _©Siara-cc_, **Apache-2.0** License.
 - [**crypto-js**](https://github.com/brix/crypto-js) AES加密实现 _©Jeff Mott/Evan Vosberg_, **MIT** License.
