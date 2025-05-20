@@ -38,13 +38,11 @@
 
 ---
 
-✨ 请查阅 [**部署指南**](DEPLOY.md) 快速开始使用本项目。  
-✨ 请查阅 [**细节和使用指南**](https://github.com/SheepChef/Abracadabra/blob/main/USAGE.md) 以深入了解本项目的设计思路，内部机制和最佳实践。
-<br>
-<br>
-**⚠️本项目受私有许可证保护**，使用本项目则默认视为同意并遵守相关条款。  
-👉 查阅 [**AIPL-1.1 许可**](LICENSE.md) 来了解详细信息，也可以前往 [**#87**](https://github.com/SheepChef/Abracadabra/issues/87) 查阅简单介绍，  
-👉 有关本项目的依赖项，请见 [**开放源代码许可**](#开放源代码许可) 一节。
+✨ 查阅 [**快速使用**](#快速使用) 一节，以快速开始使用/部署本项目。  
+✨ 查阅 [**细节和使用指南**](https://github.com/SheepChef/Abracadabra/blob/main/USAGE.md) 以深入了解本项目的细节。  
+
+👉 查阅 [**开放源代码许可**](#开放源代码许可) 一节，了解本项目的依赖项和许可证。
+
 ## 特性
 
 - **仿真，使用文言语法句式**。
@@ -328,6 +326,13 @@ AES 加密密钥和转轮密钥是同一个，均采用哈希值。
 感谢贡献 PR 和参与测试的所有人。
 
 ## 开放源代码许可
+
+**⚠️本项目受私有许可证保护**，使用本项目则默认视为同意并遵守相关条款。  
+👉 查阅 [**AIPL-1.1 许可**](LICENSE.md) 来了解详细信息，也可以前往 [**#87**](https://github.com/SheepChef/Abracadabra/issues/87) 查阅简单介绍，  
+
+---
+
+以下是本项目的依赖项：
 
 - [**Unishox2**](https://github.com/siara-cc/Unishox2) 短字符串压缩实现 _©Siara-cc_, **Apache-2.0** License.
 - [**crypto-js**](https://github.com/brix/crypto-js) AES加密实现 _©Jeff Mott/Evan Vosberg_, **MIT** License.
