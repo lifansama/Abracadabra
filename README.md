@@ -105,7 +105,7 @@ echo '{"method":"NEXT","mode":"ENCRYPT","inputType":"TEXT","outputType":"TEXT","
 
 如果你想自行快速部署这个静态页，可以在Release中下载快速部署文件包。若要自行编译或修改，请前往前端源代码仓库。
 
-浏览器插件和油猴脚本的源码同样在前端源代码仓库，分别位于 crx 和 userscript 分支。
+浏览器插件的源码同样在前端源代码仓库，位于 crx 分支。
 
 [<img src="https://img.shields.io/badge/静态页面-ffd91c?logo=cloudflarepages&style=for-the-badge&logoColor=000000" width="130"/>](https://abra.halu.ca/)
 [<img src="https://img.shields.io/badge/前端源码-9a10b5?style=for-the-badge" width="103" />](https://github.com/SheepChef/Abracadabra_demo)
