@@ -53,6 +53,8 @@ const SIG_DECRYPT_JP = "桜込凪雫実沢";
 const SIG_DECRYPT_CN = "玚俟玊欤瞐珏";
 const NULL_STR = "孎"; //默认忽略的占位字符，一个生僻字。
 
+var MT = new MersenneTwister(Date.now());
+
 const CHINESE_WEBPAN_LIB = [
   "https://",
   "lanzou",
@@ -583,7 +585,6 @@ function setCharOnIndex(string, index, char) {
 }
 
 function GetRandomIndex(length) {
-  let MT = new MersenneTwister(Math.floor(Math.random() * 1000000000));
   let Rand = Math.floor(MT.random() * length);
 
   return Rand;
@@ -702,6 +703,7 @@ function RoundReset() {
   NUMBERSYMBOL_ROUND_1 = "1234567890+=_-/?.>,<|`~!@#$%^&*(){}[];:";
   NUMBERSYMBOL_ROUND_2 = "~3{8}_-$[6(2^&#5|1*%0,<9:`+@7/?.>4=];!)"; //手动随机打乱的乱序轮
   NUMBERSYMBOL_ROUND_3 = "1234567890+=_-/?.>,<|`~!@#$%^&*(){}[];:";
+  MT = new MersenneTwister(Date.now());
 }
 
 function RoundControlInit(key) {
