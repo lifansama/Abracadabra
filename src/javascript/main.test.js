@@ -10,7 +10,7 @@
  *
  */
 
-import { expect, test } from "vitest";
+import { expect, test, bench } from "vitest";
 
 import { Abracadabra } from "./main";
 
@@ -29,6 +29,7 @@ const TestLinks = [
   "https://test.cn",
   "https://test.cc",
   "https://test.jp",
+  "https://test.one",
 ];
 
 function generateRandomUint8Array(length) {
@@ -139,10 +140,11 @@ test("随机数据加密测试", { timeout: 15000 }, () => {
     //传统模式，自动判别
     Abra.Input(data, "AUTO", "ABRACADABRA");
     TestTemp3 = Abra.Output();
-    Abra.Input(TestTemp2, "AUTO", "ABRACADABRA");
+    Abra.Input(TestTemp3, "AUTO", "ABRACADABRA");
     TestTemp3 = Abra.Output();
 
     expect(TestTemp).toStrictEqual(data);
     expect(TestTemp2).toStrictEqual(data);
+    expect(TestTemp3).toStrictEqual(data);
   });
 });

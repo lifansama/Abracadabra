@@ -41,8 +41,8 @@ export class Abracadabra {
   static DECRYPT = "DECRYPT";
   static AUTO = "AUTO";
 
-  #input = ""; //输入类型，可以是 BLOB 或者 TEXT
-  #output = ""; //输出类型，可以是 BLOB 或者 TEXT
+  #input = ""; //输入类型，可以是 UINT8 或者 TEXT
+  #output = ""; //输出类型，可以是 UINT8 或者 TEXT
 
   #res = null; // 输出的结果
 
@@ -64,15 +64,7 @@ export class Abracadabra {
     this.#output = outputType;
   }
   /**
-   * 输入数据以处理，请注意指定的类型
-   *
-   * **模式定义**
-   *
-   * **ENCRYPT** 强制加密。
-   *
-   * **DECRYPT** 强制解密。
-   *
-   * **AUTO** 自动判断输入是否是密文，然后自动执行对应操作。
+   * 魔曰 传统加密模式
    *
    * @param{string | Uint8Array}input 输入的数据，根据此前指定的输入类型，可能是字符串或字节数组
    * @param{string}mode 指定模式，可以是 ENCRYPT DECRYPT AUTO 中的一种;
@@ -106,7 +98,6 @@ export class Abracadabra {
           mode == Abracadabra.DECRYPT
         ) {
           //如果是加密的字符串且没有强制指定要再次加密，或者强制执行解密,自动执行解密
-          //注意，DEFAULT此时不可用(即使指定)，在这里如果指定DEFAULT，也会自动执行解密
           //如果是加密的字符串,指定AUTO在此处会自动解密
           this.#res = Util.deMap(preCheckRes, key);
         } else {
@@ -136,6 +127,9 @@ export class Abracadabra {
     }
     return 0;
   }
+  /**
+   * 魔曰 获取加密/解密后的结果
+   */
   Output() {
     if (this.#res == null) {
       throw "Null Output, please input some data at first.";
@@ -170,14 +164,7 @@ export class Abracadabra {
     }
   }
   /**
-   * 输入数据以处理，请注意指定的类型
-   *
-   * **模式定义**
-   *
-   * **ENCRYPT** 强制加密。
-   *
-   * **DECRYPT** 强制解密。
-   *
+   * 魔曰 文言文加密模式
    *
    * @param{string | Uint8Array}input 输入的数据，根据此前指定的输入类型，可能是字符串或字节数组
    * @param{string}mode 指定模式，可以是 ENCRYPT DECRYPT 中的一种;
