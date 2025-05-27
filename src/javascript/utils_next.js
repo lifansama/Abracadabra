@@ -804,13 +804,6 @@ function distributePayload(n) {
   return parts;
 }
 
-export class PreCheckResult {
-  constructor(output, isEncrypted = false) {
-    this.output = output;
-    this.isEncrypted = isEncrypted;
-  }
-}
-
 export function selectSentence(PayloadLength, RandomIndex = 0, p, l) {
   //P 强制对仗骈文
   //L 强制多用逻辑句式
@@ -1361,16 +1354,6 @@ export function getCryptText(text, type) {
 export function findOriginText(text) {
   let letter = String(text);
   let res;
-  for (let key in DecodeTable) {
-    DecodeTable[key].forEach((item) => {
-      if (letter == item) {
-        res = DRoundKeyMatch(key);
-      }
-    });
-  }
-  if (res) {
-    return res;
-  }
   for (let key in DecodeTable) {
     DecodeTable[key].forEach((item) => {
       if (letter == item) {

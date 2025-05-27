@@ -126,6 +126,7 @@ echo '{"method":"NEXT","mode":"ENCRYPT","inputType":"TEXT","outputType":"TEXT","
 
 ### Android 客户端
 
+
 本项目的 Android 客户端完全在 WebView 中静态运行。  
 
 ![image](https://github.com/user-attachments/assets/0f3b1c92-8853-4c70-8ef2-58630769beda)
