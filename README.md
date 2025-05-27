@@ -33,12 +33,11 @@
 
 </div>
 
-**Abracadabra(魔曰)** 是一个安全高效的文本加密工具，对任意给定数据进行加密处理。  
-是熊曰、兽音译者、佛曰等一众加密项目的高质量开源替代，添加了诸多崭新功能，更易使用。
+**Abracadabra(魔曰)** 是一个安全高效的文本加密工具，对任意给定数据进行加密处理。完全开源，易于部署，易于使用。
 
 ---
 
-✨ 查阅 [**快速使用**](#快速使用) 一节，以快速开始使用/部署本项目。  
+✨ 查阅 [**快速使用**](#快速使用) 一节，以开始使用/部署本项目。  
 ✨ 查阅 [**细节和使用指南**](https://github.com/SheepChef/Abracadabra/blob/main/USAGE.md) 以深入了解本项目的细节。  
 
 👉 查阅 [**开放源代码许可**](#开放源代码许可) 一节，了解本项目的依赖项和许可证。
@@ -46,9 +45,8 @@
 ## 特性
 
 - **仿真，使用文言语法句式**。
-- 简短，密文简短方便复制。
+- 开源，所有源代码公开可查。
 - 随机，加密结果具有随机性。
-- 安心，密码表公开可查阅。
 - 安全，AES256 + 三重转轮混淆。
 - 双模式，同时支持仿真加密和传统加密。
 
@@ -67,7 +65,7 @@
 
 请查阅 [**部署指南**](DEPLOY.md) 来了解详细使用方法。
 
-旧的 C++ 版本已被废弃，不再受后向兼容维护。
+要部署前端网页，请查阅前端源代码仓库。
 
 ### JavaScript
 
@@ -107,7 +105,7 @@ echo '{"method":"NEXT","mode":"ENCRYPT","inputType":"TEXT","outputType":"TEXT","
 
 如果你想自行快速部署这个静态页，可以在Release中下载快速部署文件包。若要自行编译或修改，请前往前端源代码仓库。
 
-浏览器插件和油猴脚本的源码同样在前端源代码仓库，分别位于 crx 和 userscript 分支。
+浏览器插件的源码同样在前端源代码仓库，位于 crx 分支。
 
 [<img src="https://img.shields.io/badge/静态页面-ffd91c?logo=cloudflarepages&style=for-the-badge&logoColor=000000" width="130"/>](https://abra.halu.ca/)
 [<img src="https://img.shields.io/badge/前端源码-9a10b5?style=for-the-badge" width="103" />](https://github.com/SheepChef/Abracadabra_demo)
@@ -128,6 +126,7 @@ echo '{"method":"NEXT","mode":"ENCRYPT","inputType":"TEXT","outputType":"TEXT","
 
 ### Android 客户端
 
+
 本项目的 Android 客户端完全在 WebView 中静态运行。  
 
 ![image](https://github.com/user-attachments/assets/0f3b1c92-8853-4c70-8ef2-58630769beda)
@@ -137,34 +136,6 @@ APK使用HBuilderX自动打包，**完全离线运行，没有自动更新等配
 功能和界面均和前端静态网页没有差异。  
 
 APK文件可以 [**在 Release 中下载**](https://github.com/SheepChef/Abracadabra/releases/latest)
-
-### 油猴脚本
-
-油猴脚本基于本项目的 JavaScript 实现，已上传到 **Greasy Fork** 网站。
-
-![image](https://github.com/user-attachments/assets/1f8420f2-0c67-43d0-a280-1215d38e47a5)
-
-油猴脚本在部分网站页面中提供一个小型悬浮窗，助你快速调用本项目的核心功能。
-
-点击加密/解密，将自动复制结果到剪切板。
-
-[<img src="https://img.shields.io/badge/Greasy Fork-8a54ff?logo=greasyfork&style=for-the-badge&logoColor=ffffff" width="171" />](https://greasyfork.org/zh-CN/scripts/529514-abracadabra-%E9%AD%94%E6%9B%B0)
-
->目前支持：百度贴吧、Bilibili
-
-## 注意
-
-Abracadabra 还在积极开发中，这里是一些注意事项。
-
-### 密文污染(传统加密)
-
-加密选择的标志位尽可能地排除了日常情况下出现碰撞的可能。
-
-但有些极其特殊的时候，例如你正在尝试加密日语和中文夹杂的文本/文件，此时有可能出现污染现象。
-
-如果出现污染现象，程序会立刻抛出错误并退出。
-
-你可以选择强制加密来解决此问题。
 
 ## 细节概要
 
@@ -212,98 +183,7 @@ AES 加密密钥和转轮密钥是同一个，均采用哈希值。
 
 这显著增强了密文的安全性，使得各种攻击难以奏效。
 
-## 功能比较
-
-<table width="450px">
-<tr>
-<th>特性</th>
-<th align=center>Abracadabra</th>
-<th align=center>与熊论道</th>
-<th align=center>佛曰</th>
-<th align=center>兽音</th>
-<th align=center>Whisperer</th>
-</tr>
-<tr>
-<td>开源</td>
-<td align=center>✅</td>
-<td align=center>❌</td>
-<td align=center>❌</td>
-<td align=center>✅</td>
-<td align=center>✅</td>
-</tr>
-<tr>
-<td>易用</td>
-<td align=center>✅</td>
-<td align=center>✅</td>
-<td align=center>✅</td>
-<td align=center>✅</td>
-<td align=center>✅</td>
-</tr>
-<tr>
-<td>安全</td>
-<td align=center>✅</td>
-<td align=center>❌</td>
-<td align=center>✅</td>
-<td align=center>❌</td>
-<td align=center>❌</td>
-</tr>
-<tr>
-<td>仿真</td>
-<td align=center>✅</td>
-<td align=center>❌</td>
-<td align=center>❌</td>
-<td align=center>❌</td>
-<td align=center>❌</td>
-</tr>
-<tr>
-<td>本地运行</td>
-<td align=center>✅</td>
-<td align=center>❌</td>
-<td align=center>✅</td>
-<td align=center>✅</td>
-<td align=center>✅</td>
-</tr>
-<tr>
-<td>短密文</td>
-<td align=center>✅</td>
-<td align=center>🟡</td>
-<td align=center>❌</td>
-<td align=center>❌</td>
-<td align=center>✅</td>
-</tr>
-<tr>
-<td>随机性</td>
-<td align=center>✅</td>
-<td align=center>❌</td>
-<td align=center>✅</td>
-<td align=center>❌</td>
-<td align=center>🟡</td>
-</tr>
-<tr>
-<td>自判断</td>
-<td align=center>✅</td>
-<td align=center>❌</td>
-<td align=center>❌</td>
-<td align=center>❌</td>
-<td align=center>❌</td>
-</tr>
-<tr>
-<td>自校验</td>
-<td align=center>✅</td>
-<td align=center>❌</td>
-<td align=center>✅</td>
-<td align=center>❌</td>
-<td align=center>❌</td>
-</tr>
-<tr>
-<td>易部署</td>
-<td align=center>✅</td>
-<td align=center>❌</td>
-<td align=center>❌</td>
-<td align=center>✅</td>
-<td align=center>🟡</td>
-</tr>
-</table>
+## 比较
 
 ```
 明文：Abracadabra
@@ -327,8 +207,8 @@ AES 加密密钥和转轮密钥是同一个，均采用哈希值。
 
 ## 开放源代码许可
 
-**⚠️本项目受私有许可证保护**，使用本项目则默认视为同意并遵守相关条款。  
-👉 查阅 [**AIPL-1.1 许可**](LICENSE.md) 来了解详细信息，也可以前往 [**#87**](https://github.com/SheepChef/Abracadabra/issues/87) 查阅简单介绍，  
+**⚠️本项目受私有许可证保护**，使用本项目则默认视为同意并遵守相关条款。禁止将本项目用于非法用途。  
+👉 查阅 [**AIPL-1.1 许可**](LICENSE.md) 来了解详细信息，也可以前往 [**#87**](https://github.com/SheepChef/Abracadabra/issues/87) 查阅简单介绍。  
 
 ---
 
