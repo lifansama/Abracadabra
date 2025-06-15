@@ -1127,8 +1127,12 @@ export function enMap(input, key, q, r, p, l) {
           //如果上个句式不是冒号句
           LastQuoteMark = true;
           TempStr1 = TempStr1 + "：“";
-          LastQuote = 0; //如果两个连续冒号句子，那么会在下一个句子关闭引号，而非本句
+          LastQuote = 0;
           CommaCounter = 0;
+        } else if (LastQuote == 1) {
+          LastQuote = 0; //如果两个连续冒号句子，那么会在下一个句子关闭引号，而非本句
+          TempStr1 = TempStr1 + "，"; //加上逗号
+          CommaCounter++;
         }
         //上个块是冒号句，这句话就不增加冒号(禁止连续两个冒号)
       } else if (Sentence[j][k] == "Z") {
@@ -1165,12 +1169,6 @@ export function enMap(input, key, q, r, p, l) {
       //如果已完成，检查最后一个句式后是否有特殊符号，没有的话，自动添加句号
       if (q && !hasSpecialEndSymbol) {
         TempStr1 = TempStr1 + "。";
-        if (LastQuoteMark && LastQuote > 0) {
-          //如果有未完成的冒号句，关闭冒号句
-          TempStr1 = TempStr1 + "”";
-          LastQuote = 0;
-          LastQuoteMark = false;
-        }
         break;
       }
     } else {
@@ -1182,12 +1180,6 @@ export function enMap(input, key, q, r, p, l) {
           if (TestCommaCount >= 3 && j != Sentence.length - 2) {
             //最大逗号数量也不能超过门槛
             TempStr1 = TempStr1 + "。";
-            if (LastQuoteMark && LastQuote > 0) {
-              //如果有未完成的冒号句，关闭冒号句
-              TempStr1 = TempStr1 + "”";
-              LastQuote = 0;
-              LastQuoteMark = false;
-            }
             CommaCounter = 0;
           } else {
             if (LastQuoteMark && LastQuote > 0) {
@@ -1196,10 +1188,7 @@ export function enMap(input, key, q, r, p, l) {
               LastQuote = 0;
               LastQuoteMark = false;
             }
-            if (LastQuoteMark && LastQuote != 0) {
-              TempStr1 = TempStr1 + "，";
-              CommaCounter += CommaNumInSentence + 1;
-            } else if (!LastQuoteMark && LastQuote == 0) {
+            if (!LastQuoteMark && LastQuote == 0) {
               TempStr1 = TempStr1 + "，";
               CommaCounter += CommaNumInSentence + 1;
             }
@@ -1207,12 +1196,6 @@ export function enMap(input, key, q, r, p, l) {
         } else {
           //超过门槛就加上句号，然后重置逗号计数器
           TempStr1 = TempStr1 + "。";
-          if (LastQuoteMark && LastQuote > 0) {
-            //如果有未完成的冒号句，关闭冒号句
-            TempStr1 = TempStr1 + "”";
-            LastQuote = 0;
-            LastQuoteMark = false;
-          }
           CommaCounter = 0;
         }
       }
