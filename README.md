@@ -63,7 +63,7 @@
 
 密文高度随机，支持用户自定义随机性和文本风格偏好，打造前所未有的跨文化数字加密方案。
 
-<div style="width: 350px; height: 57px; border: 1px solid #BBBBBB;"><a href="https://ctext.org/zh"><img src="https://ctext.org/logos/ctplogo6.gif" border="0" alt="中国哲学书电子化计划" /></a></div>
+<div style="width: 350px; height: 57px; border: 1px solid #BBBBBB;"><a href="https://ctext.org/zhs"><img src="https://ctext.org/logos/ctplogo6.gif" border="0" alt="中国哲学书电子化计划" /></a></div>
 
 ## 快速使用
 
