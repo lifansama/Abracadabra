@@ -184,7 +184,8 @@ function Check(Map2) {
             if (
               PayloadLetter.indexOf(Sentence[d]) != -1 &&
               Sentence[d] != "Q" &&
-              Sentence[d] != "P"
+              Sentence[d] != "P" &&
+              Sentence[d] != "R"
             ) {
               ErrorOccur = true;
               console.warn(
