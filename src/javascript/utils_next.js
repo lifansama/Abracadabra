@@ -925,9 +925,6 @@ export function selectSentence(PayloadLength, RandomIndex = 0, p, l) {
       } else if (selectRand > 100 && selectRand <= 200) {
         //随机选择一个，不一定是最优解
         TargetPayload = PossiblePayload[GetRandomIndex(PossiblePayload.length)];
-        PossiblePayload = PossiblePayload.filter(
-          (item) => item > TargetPayload
-        );
       }
 
       let PossibleSentences = []; // 所有挑选出来的可能句式，选择时任选其一。
@@ -1072,6 +1069,8 @@ export function enMap(input, key, q, r, p, l) {
   let LastQuoteMark = false; //为避免连续冒号和引号，设立状态变量。
   let LastQuote = 0; //下引号的状态(上引号的距离)
 
+  let NoAutoSymbol = false; //指定某一轮不自动添加标点符号
+
   RoundKey(); //首次对表前，先转动一次转轮
   for (let j = 0; j < Sentence.length; j++) {
     hasSpecialEndSymbol = false;
@@ -1130,8 +1129,10 @@ export function enMap(input, key, q, r, p, l) {
           LastQuote = 0;
           CommaCounter = 0;
         } else if (LastQuote == 1) {
+          //进入此分支，意味着不会再次添加逗号
           LastQuote = 0; //如果两个连续冒号句子，那么会在下一个句子关闭引号，而非本句
           TempStr1 = TempStr1 + "，"; //加上逗号
+          NoAutoSymbol = true;
           CommaCounter++;
         }
         //上个块是冒号句，这句话就不增加冒号(禁止连续两个冒号)
@@ -1165,6 +1166,7 @@ export function enMap(input, key, q, r, p, l) {
         Finished = true;
       }
     }
+    //这里是句式和句式的外层控制循环
     if (Finished) {
       //如果已完成，检查最后一个句式后是否有特殊符号，没有的话，自动添加句号
       if (q && !hasSpecialEndSymbol) {
@@ -1176,9 +1178,10 @@ export function enMap(input, key, q, r, p, l) {
         LastQuote = 0;
         LastQuoteMark = false;
       }
+      NoAutoSymbol = false;
       break;
     } else {
-      if (q && !hasSpecialEndSymbol) {
+      if (q && !hasSpecialEndSymbol && !NoAutoSymbol) {
         //如果连续出现三个以上的逗号，那么自动加上一个句号
         let TestCommaCount = CommaCounter + (CommaNumInSentence + 1); //计算本句添加后可能的最大逗号数量
         if (CommaCounter < 3 || j == Sentence.length - 2) {
@@ -1213,6 +1216,9 @@ export function enMap(input, key, q, r, p, l) {
       }
       if (hasSpecialEndSymbol) {
         CommaCounter = 0;
+      }
+      if (NoAutoSymbol) {
+        NoAutoSymbol = false;
       }
     }
   }
