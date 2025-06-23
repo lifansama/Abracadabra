@@ -18,6 +18,8 @@
 
 [<img src="https://img.shields.io/github/v/release/SheepChef/Abracadabra?color=00aaff"/>](https://github.com/SheepChef/Abracadabra/releases/latest)
 [<img src="https://img.shields.io/github/actions/workflow/status/SheepChef/Abracadabra/node.js.yml?branch=main&label=%E6%9E%84%E5%BB%BA"/>](https://github.com/SheepChef/Abracadabra/actions/workflows/node.js.yml)
+[<img src="https://img.shields.io/codecov/c/github/SheepChef/Abracadabra?label=%E8%A6%86%E7%9B%96%E7%8E%87"/>](https://github.com/SheepChef/Abracadabra/actions/workflows/coverage.yml)
+<a href="https://hellogithub.com/repository/6d67b7be3ccc43419924dbe40b31e937" target="_blank"><img src="https://api.hellogithub.com/v1/widgets/recommend.svg?rid=6d67b7be3ccc43419924dbe40b31e937&claim_uid=cQrPYdpGNg4ACK6&theme=small" alt="Featured｜HelloGitHub" /></a>
 ![GitHub Repo stars](https://img.shields.io/github/stars/SheepChef/Abracadabra)
 
 </div>
@@ -55,7 +57,7 @@
 
 > 鹏彰于物，不必奏也。捷天谨走，城光益添，和人弥任，铃夜皆写，呈雨以登铃。
 >
-> 尝见寒裳，恭飞静星之光，可风者悦。此曲有快林雅木，近局怡鲤。骏冰之庭，写之林而筑之心也。夏非成而返之者，孰请无楼。南天之梦，游之物而度之月也。铃曰，何惠之需？写请与其心，而笑可振以镜者，林也。今之报者，亦将有听于此鹤，不请定也。
+> 光韵开云，雅于莺茶，停而行之之谓速。是故无悦无谜，无瑞无聪，裳之所走、树之所振也。旧铃之纯水，常为悦水之莹风。人曰：“瑞琴之路，常留于其所允行而不读之处。” 璃非笑而去之者，孰可无鹏。非将选也，非可指也，书非当事涧，仍继叶言，奈何，同森而非航水也，能鸢者益。
 >
 
 构造高仿真文言文，**参考《古文观止》《经史百家杂钞》《古文辞类纂》等古代典籍。**  
@@ -129,7 +131,6 @@ echo '{"method":"NEXT","mode":"ENCRYPT","inputType":"TEXT","outputType":"TEXT","
 > **提示：Edge 插件商店的上架审核速度十分缓慢，因此更新速度也更慢。不推荐从Edge商店下载本插件。**
 
 ### Android 客户端
-
 
 本项目的 Android 客户端完全在 WebView 中静态运行。  
 
@@ -218,7 +219,9 @@ AES 加密密钥和转轮密钥是同一个，均采用哈希值。
 
 感谢 [**中国哲学书电子化计划**](http://ctext.org/zhs) 提供高质量的古籍参考资料。
 
-感谢贡献 PR 和参与测试的所有人。
+感谢 [**@Amlkiller**](https://github.com/amlkiller) 为本项目提供十分有价值的反馈和建议。
+
+感谢贡献 PR 和参与测试的其他所有人，以及**正在使用本项目的您**。
 
 ## 开放源代码许可
 
