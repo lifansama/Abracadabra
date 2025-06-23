@@ -873,25 +873,16 @@ export function selectSentence(PayloadLength, RandomIndex = 0, p, l) {
 
   let DividedPayload = distributeInteger(PayloadLength); //把Payload平均分配给三个部分。
 
+  let SegmentedPayload = [new Array(), new Array(), new Array()]; //二维数组，保存分配之后的负载。
+
   let ElementResult = []; //最终要返回的语素序列
 
+  //分配负载到一个二维数组中
   for (let i = 0; i < 3; i++) {
     //第一重循环，选择Payload
 
     let Payload = DividedPayload[i];
-    let Lib = "";
 
-    switch (i) {
-      case 0:
-        Lib = "Begin";
-        break;
-      case 1:
-        Lib = "Main";
-        break;
-      case 2:
-        Lib = "End";
-        break;
-    }
     for (let a = 0; a < Payload; ) {
       //第二重循环，用算法选择句式，满足载荷
       selectRand = GetRandomIndex(101) + RandomIndex;
@@ -927,9 +918,44 @@ export function selectSentence(PayloadLength, RandomIndex = 0, p, l) {
         TargetPayload = PossiblePayload[GetRandomIndex(PossiblePayload.length)];
       }
 
+      SegmentedPayload[i].push(TargetPayload);
+      a = a + TargetPayload;
+    }
+  }
+
+  for (let z = 0; z < 3; z++) {
+    //标准洗牌算法，打乱负载的分布
+    for (let i = SegmentedPayload[z].length - 1; i >= 1; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [SegmentedPayload[z][i], SegmentedPayload[z][j]] = [
+        SegmentedPayload[z][j],
+        SegmentedPayload[z][i],
+      ];
+    }
+  }
+
+  //开始根据分配好的载荷执行组句
+  for (let i = 0; i < 3; i++) {
+    let Lib = "";
+
+    switch (i) {
+      case 0:
+        Lib = "Begin";
+        break;
+      case 1:
+        Lib = "Main";
+        break;
+      case 2:
+        Lib = "End";
+        break;
+    }
+
+    for (let a = 0; a < SegmentedPayload[i].length; a++) {
       let PossibleSentences = []; // 所有挑选出来的可能句式，选择时任选其一。
       let PossiblePianSentences = []; // 所有可能的骈文句式。
       let PossibleLogicSentences = []; // 所有可能的逻辑句式
+
+      let TargetPayload = SegmentedPayload[i][a]; //目标负载
       for (let c = 0; c < Map_Obj["Sentences"][Lib].length; c++) {
         //开始选择句式
         let Sentence = Map_Obj["Sentences"][Lib][c].split("/"); //Sentence是列表，按照/分割的句式
@@ -999,12 +1025,10 @@ export function selectSentence(PayloadLength, RandomIndex = 0, p, l) {
           }
         }
       }
-
       ElementResult.push(TargetSentence);
-
-      a = a + TargetPayload;
     }
   }
+
   return ElementResult;
 }
 
