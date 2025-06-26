@@ -802,6 +802,134 @@ function RoundControlInit(key) {
   RoundControl = HashArray;
 }
 
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+function avoidAdjacentDuplicates(arr) {
+  if (arr.length <= 1) return arr;
+  const newArr = [...arr];
+  let hasAdjacent = true;
+  let maxTries = newArr.length;
+
+  while (hasAdjacent && maxTries > 0) {
+    hasAdjacent = false;
+    for (let i = 0; i < newArr.length - 1; i++) {
+      if (newArr[i] === newArr[i + 1]) {
+        hasAdjacent = true;
+        // 尝试在i+2位置之后找一个可以交换的元素
+        for (let j = i + 2; j < newArr.length; j++) {
+          if (
+            newArr[j] !== newArr[i] &&
+            (j === 0 || newArr[j - 1] !== newArr[i]) &&
+            (j === newArr.length - 1 || newArr[j + 1] !== newArr[i])
+          ) {
+            [newArr[i + 1], newArr[j]] = [newArr[j], newArr[i + 1]];
+            break;
+          }
+        }
+        break;
+      }
+    }
+    maxTries--;
+  }
+  return newArr;
+}
+
+function mergeNumbers(arr, factor) {
+  // 分离小于3的数字和其他数字
+  const lessThan3 = arr.filter((num) => num < 3);
+  const rest = arr.filter((num) => num >= 3);
+
+  // 根据因子计算需要保留的小于3的数字数量
+  const preserveCount = Math.max(
+    0,
+    Math.floor((1 - factor) * lessThan3.length)
+  );
+
+  // 保留部分数字
+  const preserved = [];
+  const toMerge = [];
+
+  // 随机选择要保留的数字
+  const temp = [...lessThan3];
+  for (let i = 0; i < preserveCount; i++) {
+    const randomIndex = Math.floor(Math.random() * temp.length);
+    preserved.push(temp.splice(randomIndex, 1)[0]);
+  }
+  toMerge.push(...temp);
+
+  // 如果没有需要合并的数字，直接返回
+  if (toMerge.length === 0) {
+    return [...shuffle(rest), ...shuffle(preserved)];
+  }
+
+  // 计算需要合并的总和
+  const sum = toMerge.reduce((acc, val) => acc + val, 0);
+
+  // 计算合并后的数字数量范围
+  const minSegments = Math.ceil(sum / 9); // 最少段数
+  const maxSegments = Math.min(toMerge.length, Math.floor(sum / 3)); // 最多段数
+  let bestSegmentCount = minSegments;
+
+  // 寻找最优合并段数
+  let minVariance = Infinity;
+  for (let k = minSegments; k <= maxSegments; k++) {
+    const base = Math.floor(sum / k);
+    const remainder = sum % k;
+    const values = [];
+
+    // 生成k个数值
+    for (let i = 0; i < k; i++) {
+      values.push(i < remainder ? base + 1 : base);
+    }
+
+    // 计算方差（均匀度）
+    const mean = sum / k;
+    const variance =
+      values.reduce((acc, val) => acc + Math.pow(val - mean, 2), 0) / k;
+
+    // 更新最优解
+    if (variance < minVariance) {
+      minVariance = variance;
+      bestSegmentCount = k;
+    }
+  }
+
+  // 生成合并后的数字
+  const base = Math.floor(sum / bestSegmentCount);
+  const remainder = sum % bestSegmentCount;
+  const merged = [];
+
+  for (let i = 0; i < bestSegmentCount; i++) {
+    merged.push(i < remainder ? base + 1 : base);
+  }
+
+  // 组合结果并返回
+  return [...shuffle(rest), ...shuffle(preserved), ...merged];
+}
+
+function processArray(twoDArray, factor) {
+  return twoDArray.map((subArray) => {
+    // 检查是否需要合并
+    if (subArray.length > 6) {
+      const countLessThan3 = subArray.filter((num) => num < 3).length;
+      if (countLessThan3 / subArray.length > 0.35) {
+        subArray = mergeNumbers(subArray, factor);
+      }
+    }
+
+    // 打乱顺序
+    subArray = shuffle(subArray);
+    // 避免相邻重复
+    return avoidAdjacentDuplicates(subArray);
+  });
+}
+
 function distributeInteger(num) {
   //把文言文密文的载荷根据一定比例分成三份(一段)
   if (num <= 3) {
@@ -811,16 +939,6 @@ function distributeInteger(num) {
 
   let maxPart = Math.floor(num * 0.2); // 计算每个部分的最大值
   let remaining = num - 2 * maxPart; // 计算剩余部分
-
-  if (remaining <= 0) {
-    // 如果剩余部分小于等于 0，则调整最大值，确保每个元素都大于 0
-    maxPart = Math.floor((num - 2) / 3); // 调整 maxPart 的计算方式
-    remaining = num - 2 * maxPart;
-
-    if (remaining <= 0) {
-      return []; // 如果调整后仍然无法满足要求，则返回空数组
-    }
-  }
 
   const result = [maxPart, remaining, maxPart]; // 创建包含三个整数的数组
 
@@ -849,6 +967,7 @@ export function selectSentence(PayloadLength, RandomIndex = 0, p, l) {
   //L 强制多用逻辑句式
   //句式选择算法
   //RandomIndex 随机指数，越大，给出的句式越随机，最大100。
+  /* v8 ignore next 7 */
   if (RandomIndex > 100 || RandomIndex < 0) {
     //错误的输入。
     throw "Incorrect Random Index";
@@ -923,16 +1042,17 @@ export function selectSentence(PayloadLength, RandomIndex = 0, p, l) {
     }
   }
 
-  for (let z = 0; z < 3; z++) {
+  /*for (let z = 0; z < 3; z++) {
     //标准洗牌算法，打乱负载的分布
     for (let i = SegmentedPayload[z].length - 1; i >= 1; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
+      const j = Math.floor(MT.random() * (i + 1));
       [SegmentedPayload[z][i], SegmentedPayload[z][j]] = [
         SegmentedPayload[z][j],
         SegmentedPayload[z][i],
       ];
     }
-  }
+  }*/
+  SegmentedPayload = processArray(SegmentedPayload, 1 - RandomIndex / 100);
 
   //开始根据分配好的载荷执行组句
   for (let i = 0; i < 3; i++) {
@@ -1305,6 +1425,7 @@ export function deMap(input, key) {
 
     findtemp = findOriginText(temp); //查找第一个字符的原文
     if (findtemp == NULL_STR) {
+      /* v8 ignore next 2 */
       throw "Bad Input. Try force encrypt if intended.";
     }
     TempStr1 = TempStr1 + findtemp; //把找到的原文增加到字符串上
@@ -1316,6 +1437,7 @@ export function deMap(input, key) {
   let TempStr2Int = new Uint8Array();
   let RandomBytes = new Array(2);
   if (!Base64.isValid(TempStr1)) {
+    /* v8 ignore next 3 */
     //检查Base64是否合法，如果不合法，那么就没有必要继续处理下去
     throw "Error Decoding. Bad Input or Incorrect Key.";
   }
@@ -1335,23 +1457,16 @@ export function deMap(input, key) {
     TempStr2Int = GZIP_DECOMPRESS(TempStr2Int);
     TempStr2Int = UNISHOX_DECOMPRESS(TempStr2Int);
   } catch (err) {
+    /* v8 ignore next 3 */
     //解压缩/解密失败，丢出错误。
     throw "Error Decoding. Bad Input or Incorrect Key.";
   }
 
   if (!CheckLuhnBit(TempStr2Int)) {
+    /* v8 ignore next 3 */
     //检查密文的校验位是否匹配
-    if (
-      TempStr2Int.at(TempStr2Int.byteLength - 1) == 2 &&
-      TempStr2Int.at(TempStr2Int.byteLength - 2) == 2 &&
-      TempStr2Int.at(TempStr2Int.byteLength - 3) == 2
-    ) {
-      //这个兼容性判断将会在未来被移除。
-      TempStr2Int = TempStr2Int.subarray(0, TempStr2Int.byteLength - 3);
-    } else {
-      //校验不通过，则丢出错误。
-      throw "Error Decrypting. Checksum Mismatch.";
-    }
+    //校验不通过，则丢出错误。
+    throw "Error Decrypting. Checksum Mismatch.";
   } else {
     //校验通过，则移除校验位。
     TempStr2Int = TempStr2Int.subarray(0, TempStr2Int.byteLength - 1);
@@ -1486,6 +1601,7 @@ export function getCryptText(text, type) {
       }
     }
   }
+  /* v8 ignore next 2 */
   return NULL_STR;
 }
 
@@ -1503,6 +1619,7 @@ export function findOriginText(text) {
   if (res) {
     return res;
   } else {
+    /* v8 ignore next 2 */
     return NULL_STR;
   }
 }
