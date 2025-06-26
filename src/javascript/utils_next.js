@@ -1042,16 +1042,6 @@ export function selectSentence(PayloadLength, RandomIndex = 0, p, l) {
     }
   }
 
-  /*for (let z = 0; z < 3; z++) {
-    //标准洗牌算法，打乱负载的分布
-    for (let i = SegmentedPayload[z].length - 1; i >= 1; i--) {
-      const j = Math.floor(MT.random() * (i + 1));
-      [SegmentedPayload[z][i], SegmentedPayload[z][j]] = [
-        SegmentedPayload[z][j],
-        SegmentedPayload[z][i],
-      ];
-    }
-  }*/
   SegmentedPayload = processArray(SegmentedPayload, 1 - RandomIndex / 100);
 
   //开始根据分配好的载荷执行组句
