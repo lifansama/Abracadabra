@@ -29,8 +29,8 @@
 [<img src="https://img.shields.io/badge/立刻使用-ffd91c?logo=cloudflarepages&style=for-the-badge&logoColor=000000" width="170"/>](https://abra.halu.ca/)
 [<img src="https://img.shields.io/badge/下载插件-8a54ff?logo=googlechrome&style=for-the-badge&logoColor=ffffff" width="170" />](#浏览器插件)
 
+[<img src="https://img.shields.io/badge/项目完整文档-54ffac?style=for-the-badge" width="120" />](https://doc.abra.halu.ca)
 [<img src="https://img.shields.io/badge/前端源码仓库-9a10b5?style=for-the-badge" width="120" />](https://github.com/SheepChef/Abracadabra_demo)
-[<img src="https://img.shields.io/badge/贡献压缩字典-54ffac?style=for-the-badge" width="120" />](https://forms.gle/BBD5McqU6Bws6hiw6)
 [<img src="https://img.shields.io/badge/更新频道-0970ba?logo=telegram&style=for-the-badge&logoColor=ffffff" width="118" />](https://t.me/abracadabra_cn)
 
 </div>
@@ -41,7 +41,7 @@
 ---
 
 ✨ 查阅 [**快速使用**](#快速使用) 一节，以开始使用/部署本项目。  
-✨ 查阅 [**细节和使用指南**](https://github.com/SheepChef/Abracadabra/blob/main/USAGE.md) 以深入了解本项目的细节。  
+✨ 查阅 [**项目文档**](https://doc.abra.halu.ca)，快速开始使用本项目。
 
 👉 查阅 [**开放源代码许可**](#开放源代码许可) 一节，了解本项目的依赖项和许可证。
 
@@ -82,42 +82,10 @@
 
 ## 快速使用
 
-开发者请查阅 [**部署指南**](DEPLOY.md) 来了解详细部署方法。  
+开发者请查阅 [**项目文档**](https://doc.abra.halu.ca) 来了解详细部署方法。  
 要部署前端网页，请查阅 Release 和前端源代码仓库。
 
 如果你是普通用户，请参考本文下方的内容。
-
-### JavaScript
-
-使用 npm 下载 Abracadabra 库。
-
-你也可以前往 Release 页面直接下载Js文件。
-
-```shell
-npm install abracadabra-cn
-```
-
-然后，在项目中引入库文件
-
-```javascript
-import { Abracadabra } from "abracadabra-cn";
-```
-
-### WebAssembly
-
-前往 Release 下载编译好的 WebAssembly 文件。
-
-然后，使用 [**wasmtime**](https://github.com/bytecodealliance/wasmtime) 来调用它。
-
-```shell
-
-echo '{"method":"NEXT","mode":"ENCRYPT","inputType":"TEXT","outputType":"TEXT","input":"愿青空的祝福，与我的羽翼同在","key":"ABRACADABRA","q":true,"r":50,"p":false,"l":false}' | wasmtime abracadabra-cn.wasm
-
-```
-
-本项目的 WebAssembly 模块使用 [**Javy**](https://github.com/bytecodealliance/javy) 编译而来，方便在 C++、Rust、Go 等语言中调用，**不推荐**在类似 Python、 Java、Node.js 的解释器中调用。
-
-要调用本 WebAssembly 模块，需要使用尚在预览状态的 [**WASI**](https://github.com/WebAssembly/WASI)，目前仅有 wasmtime 提供了最完整的 WASI 支持，但它在各个语言的实现并不一致，具体请见 [**部署指南**](DEPLOY.md)。
 
 ### 静态页面 / 前端源码
 
@@ -158,7 +126,7 @@ APK文件可以 [**在 Release 中下载**](https://github.com/SheepChef/Abracad
 
 ## 细节概要
 
-请查阅 [**细节和使用指南**](https://github.com/SheepChef/Abracadabra/blob/main/USAGE.md) 了解更多。
+请查阅 [**项目文档**](https://doc.abra.halu.ca) 了解更多。
 
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/SheepChef/Abracadabra)
 
