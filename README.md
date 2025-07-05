@@ -29,7 +29,7 @@
 [<img src="https://img.shields.io/badge/立刻使用-ffd91c?logo=cloudflarepages&style=for-the-badge&logoColor=000000" width="170"/>](https://abra.halu.ca/)
 [<img src="https://img.shields.io/badge/下载插件-8a54ff?logo=googlechrome&style=for-the-badge&logoColor=ffffff" width="170" />](#浏览器插件)
 
-[<img src="https://img.shields.io/badge/项目完整文档-54ffac?style=for-the-badge" width="120" />](https://doc.abra.halu.ca)
+[<img src="https://img.shields.io/badge/项目使用文档-54ffac?style=for-the-badge" width="120" />](https://doc.abra.halu.ca)
 [<img src="https://img.shields.io/badge/前端源码仓库-9a10b5?style=for-the-badge" width="120" />](https://github.com/SheepChef/Abracadabra_demo)
 [<img src="https://img.shields.io/badge/更新频道-0970ba?logo=telegram&style=for-the-badge&logoColor=ffffff" width="118" />](https://t.me/abracadabra_cn)
 
