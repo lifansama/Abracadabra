@@ -53,17 +53,6 @@
 - 可靠，代码经过严格单元测试。
 - 便捷，易于本地部署和使用。
 
-<br>
-<sub>
-<i>
-
-与此同时，魔曰也支持[传统加密](https://github.com/SheepChef/Abracadabra/blob/main/USAGE.md#%E4%BC%A0%E7%BB%9F%E6%A8%A1%E5%BC%8F)。
- 
-传统加密模式类似熊曰、佛曰、兽音译者等此前流行的算法。
-
-</i>
-</sub>
-
 ---
 
 ###  **熔古铸今：文言文仿真加密**
@@ -162,7 +151,7 @@ AES 加密密钥和转轮密钥是同一个，均采用哈希值。
 
 数字/符号，字母分别拥有一套转轮，即总共六个转轮，改变密钥相当于更换一套完全不同的转轮。
 
-转轮显著增加了 Base64 密文的安全性，查阅 [**细节和使用指南**](https://github.com/SheepChef/Abracadabra/blob/main/USAGE.md) 来了解转轮的详细运行机制。
+转轮显著增加了 Base64 密文的安全性，查阅 [**项目文档**](https://doc.abra.halu.ca/document/enc.html#三重转轮混淆) 来了解转轮的详细运行机制。
 
 ### 压缩
 
