@@ -26,10 +26,10 @@
 
 <div align=center>
 
-[<img src="https://img.shields.io/badge/立刻使用-ffd91c?logo=cloudflarepages&style=for-the-badge&logoColor=000000" width="170"/>](https://abra.halu.ca/)
+[<img src="https://img.shields.io/badge/立刻使用-ffd91c?logo=cloudflarepages&style=for-the-badge&logoColor=000000" width="170"/>](https://abra.js.org/)
 [<img src="https://img.shields.io/badge/下载插件-8a54ff?logo=googlechrome&style=for-the-badge&logoColor=ffffff" width="170" />](#浏览器插件)
 
-[<img src="https://img.shields.io/badge/项目使用文档-54ffac?style=for-the-badge" width="120" />](https://doc.abra.halu.ca)
+[<img src="https://img.shields.io/badge/项目主页-54ffac?logo=javascript&style=for-the-badge&logoColor=000000" width="117" />](https://abracadabra.js.org)
 [<img src="https://img.shields.io/badge/前端源码仓库-9a10b5?style=for-the-badge" width="120" />](https://github.com/SheepChef/Abracadabra_demo)
 [<img src="https://img.shields.io/badge/更新频道-0970ba?logo=telegram&style=for-the-badge&logoColor=ffffff" width="118" />](https://t.me/abracadabra_cn)
 
@@ -41,7 +41,7 @@
 ---
 
 ✨ 查阅 [**快速使用**](#快速使用) 一节，快速开始使用/部署本项目。  
-✨ 查阅 [**项目文档**](https://doc.abra.halu.ca)，了解本项目的技术特点和细节。
+✨ 查阅 [**项目主页**](https://abracadabra.js.org)，了解本项目的技术特点和细节。
 
 👉 查阅 [**开放源代码许可**](#开放源代码许可) 一节，了解本项目的依赖项和许可证。
 
@@ -71,7 +71,7 @@
 
 ## 快速使用
 
-请查阅 [**项目文档**](https://doc.abra.halu.ca) ，详细了解使用/部署方法。
+请查阅 [**项目主页**](https://abracadabra.js.org) ，详细了解使用/部署方法。
 
 ### 静态页面 / 前端源码
 
@@ -81,7 +81,7 @@
 
 浏览器插件的源码同样在前端源代码仓库，位于 crx 分支。
 
-[<img src="https://img.shields.io/badge/静态页面-ffd91c?logo=cloudflarepages&style=for-the-badge&logoColor=000000" width="130"/>](https://abra.halu.ca/)
+[<img src="https://img.shields.io/badge/静态页面-ffd91c?logo=cloudflarepages&style=for-the-badge&logoColor=000000" width="130"/>](https://abra.js.org/)
 [<img src="https://img.shields.io/badge/前端源码-9a10b5?style=for-the-badge" width="103" />](https://github.com/SheepChef/Abracadabra_demo)
 
 ### 浏览器插件
@@ -112,7 +112,7 @@ APK文件可以 [**在 Release 中下载**](https://github.com/SheepChef/Abracad
 
 ## 细节概要
 
-请查阅 [**项目文档**](https://doc.abra.halu.ca) 了解更多。
+请查阅 [**项目主页**](https://abracadabra.js.org) 了解更多。
 
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/SheepChef/Abracadabra)
 
@@ -148,7 +148,7 @@ AES 加密密钥和转轮密钥是同一个，均采用哈希值。
 
 数字/符号，字母分别拥有一套转轮，即总共六个转轮，改变密钥相当于更换一套完全不同的转轮。
 
-转轮显著增加了 Base64 密文的安全性，查阅 [**项目文档**](https://doc.abra.halu.ca/document/enc.html#三重转轮混淆) 来了解转轮的详细运行机制。
+转轮显著增加了 Base64 密文的安全性，查阅 [**项目主页**](https://abracadabra.js.org/document/enc.html#三重转轮混淆) 来了解转轮的详细运行机制。
 
 ### 压缩
 

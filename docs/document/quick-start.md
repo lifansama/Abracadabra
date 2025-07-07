@@ -24,7 +24,7 @@ Demo 会适配魔曰的所有可调参数，你可以在此体验到魔曰的完
 
 <div style="width:170px">
 
-[<img src="https://img.shields.io/badge/立刻使用-ffd91c?logo=cloudflarepages&style=for-the-badge&logoColor=000000" width="170"/>](https://abra.halu.ca/)
+[<img src="https://img.shields.io/badge/立刻使用-ffd91c?logo=cloudflarepages&style=for-the-badge&logoColor=000000" width="170"/>](https://abra.js.org/)
 
 </div>
 
@@ -122,7 +122,7 @@ import { Abracadabra } from "abracadabra-cn";
 
 然后，将它解压到你网站的任意位置，也可以直接上传到静态容器中。
 
-配置路由，即可得到一个与[项目 Demo](https://abra.halu.ca/)一模一样的页面。
+配置路由，即可得到一个与[项目 Demo](https://abra.js.org/)一模一样的页面。
 
 若要自行编译或修改前端代码，请前往前端源代码仓库。
 

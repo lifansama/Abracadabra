@@ -15,7 +15,7 @@ export default withMermaid({
     nav: [
       { text: "主页", link: "/" },
       { text: "文档", link: "/document/quick-start.md" },
-      { text: "Demo", link: "https://abra.halu.ca" },
+      { text: "Demo", link: "https://abra.js.org" },
     ],
 
     sidebar: [
@@ -54,7 +54,7 @@ export default withMermaid({
       },
       { text: "AI基准测试", link: "/document/bench.md" },
       { text: "鸣谢", link: "/document/thanks.md" },
-      { text: "Demo页", link: "https://abra.halu.ca" },
+      { text: "Demo页", link: "https://abra.js.org" },
       { text: "GitHub仓库", link: "https://github.com/SheepChef/Abracadabra" },
     ],
     logo: "/logo.png",
