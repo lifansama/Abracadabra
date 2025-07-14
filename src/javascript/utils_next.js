@@ -1474,7 +1474,7 @@ export function deMap(input, key) {
   return Res;
 }
 
-export function getCryptText(text, type) {
+function getCryptText(text, type) {
   //查表函数
   let letter = String(text); //源文本
   let idx, idx2, idx3, idx4;
@@ -1595,7 +1595,7 @@ export function getCryptText(text, type) {
   return NULL_STR;
 }
 
-export function findOriginText(text) {
+function findOriginText(text) {
   //反向查表函数
   let letter = String(text);
   let res;
