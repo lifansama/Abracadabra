@@ -32,7 +32,6 @@ import { Base64 } from "js-base64";
 import * as Core from "./CoreHandler.js";
 //import * as Util_Next from "./utils_next.js";
 import { preCheck_OLD, PreCheckResult, stringToUint8Array } from "./Misc.js";
-
 export class Abracadabra {
   //主类
 
@@ -71,9 +70,14 @@ export class Abracadabra {
    * @param{string | Uint8Array}input 输入的数据，根据此前指定的输入类型，可能是字符串或字节数组
    * @param{string}mode 指定模式，可以是 ENCRYPT DECRYPT 中的一种;
    * @param{string}key 指定密钥，默认是 ABRACADABRA;
-   * @param{Core.WenyanConfig}WenyanConfigObj 文言文的生成配置;
+   * @param{WenyanConfig}WenyanConfigObj 文言文的生成配置;
    */
-  WenyanInput(input, mode, key = "ABRACADABRA", WenyanConfigObj) {
+  WenyanInput(
+    input,
+    mode,
+    key = "ABRACADABRA",
+    WenyanConfigObj = new Core.WenyanConfig(true, 50, false, false)
+  ) {
     if (this.#input == Abracadabra.UINT8) {
       //如果指定输入类型是UINT8
       if (Object.prototype.toString.call(input) != "[object Uint8Array]") {

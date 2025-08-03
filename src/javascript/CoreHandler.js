@@ -22,6 +22,14 @@ import {
 } from "./Misc.js";
 
 export class WenyanConfig {
+  /**
+   * 魔曰 文言文加密参数
+   *
+   * @param{bool}PunctuationMark 指定是否为密文添加标点符号，默认 true/添加;
+   * @param{int}RandomIndex 密文算法的随机程度，越大随机性越强，默认 50，最大100，超过100将会出错;
+   * @param{bool}PianwenMode 指定是否强制生成骈文密文，默认 false;
+   * @param{bool}LogicMode 指定是否强制生成逻辑密文，默认 false;
+   */
   constructor(
     PunctuationMark = true,
     RandomIndex = 50,
@@ -62,10 +70,16 @@ export function Enc(input, key, WenyanConfigObj) {
   //映射
   let Res = WenyanSimulatorObj.enMap(
     OriginStr,
-    WenyanConfigObj.PunctuationMark,
-    WenyanConfigObj.RandomIndex,
-    WenyanConfigObj.PianwenMode,
-    WenyanConfigObj.LogicMode
+    WenyanConfigObj.PunctuationMark !== undefined
+      ? WenyanConfigObj.PunctuationMark
+      : true,
+    WenyanConfigObj.RandomIndex !== undefined
+      ? WenyanConfigObj.RandomIndex
+      : 50,
+    WenyanConfigObj.PianwenMode !== undefined
+      ? WenyanConfigObj.PianwenMode
+      : false,
+    WenyanConfigObj.LogicMode !== undefined ? WenyanConfigObj.LogicMode : false
   );
 
   return Res;
