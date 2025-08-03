@@ -23,9 +23,9 @@ export class RoundObfus {
       "FbPoDRStyJKAUcdahfVXlqwnOGpHZejzvmrBCigQILxkYMuWTEsN"; //手动随机打乱的乱序轮
     this.LETTERS_ROUND_3 =
       "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    this.NUMBERSYMBOL_ROUND_1 = "0123456789+/=";
+    this.NUMBERSYMBOL_ROUND_1 = "1234567890+/=";
     this.NUMBERSYMBOL_ROUND_2 = "5=0764+389/12"; //手动随机打乱的乱序轮
-    this.NUMBERSYMBOL_ROUND_3 = "0123456789+/=";
+    this.NUMBERSYMBOL_ROUND_3 = "1234567890+/=";
 
     this.Normal_Characters =
       "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/=1234567890"; //表内有映射的所有字符组成的字符串
