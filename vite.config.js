@@ -17,6 +17,8 @@ export default defineConfig({
         "src/javascript/unishox2.js",
         "docs",
         "src/javascript/main.d.ts",
+        "src/javascript/utils.js",
+        "src/javascript/utils_next.js",
       ],
     },
   },
