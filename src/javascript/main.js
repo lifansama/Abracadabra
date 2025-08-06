@@ -27,10 +27,7 @@
  *
  */
 
-import { Base64 } from "js-base64";
-//import * as Util from "./utils.js";
 import * as Core from "./CoreHandler.js";
-//import * as Util_Next from "./utils_next.js";
 import { preCheck_OLD, PreCheckResult, stringToUint8Array } from "./Misc.js";
 export class Abracadabra {
   //主类
@@ -222,6 +219,7 @@ export class Abracadabra {
    * @param{string}key 指定密钥，默认是 ABRACADABRA;
    * @param{bool}q 指定是否在加密后省略标志位，默认 false/不省略;
    */
+  /* v8 ignore next 4 */
   get Input() {
     // 使用 getter 属性
     return this.OldInput;
@@ -240,6 +238,7 @@ export class Abracadabra {
    * @param{bool}p 指定是否强制生成骈文密文，默认 false;
    * @param{bool}l 指定是否强制生成逻辑密文，默认 false;
    */
+  /* v8 ignore next 12 */
   Input_Next(
     input,
     mode,

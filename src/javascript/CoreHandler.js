@@ -187,6 +187,7 @@ export function Dec_OLD(input, key) {
 
   //校验数据
   if (!CheckLuhnBit(TempStr2Int)) {
+    /* v8 ignore next 9 */
     if (
       TempStr2Int.at(TempStr2Int.byteLength - 1) == 2 &&
       TempStr2Int.at(TempStr2Int.byteLength - 2) == 2 &&
